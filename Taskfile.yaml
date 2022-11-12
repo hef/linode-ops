@@ -5,13 +5,6 @@ version: '3'
 vars:
   PROJECT_DIR:
     sh: "git rev-parse --show-toplevel"
-  ANSIBLE_DIR:  "{{.PROJECT_DIR}}/provision/ansible"
-
-tasks:
-  defaultx:
-    cmds:
-      - echo "{{.GREETING}}"
-    silent: true
 
 includes: 
   terraform: .taskfiles/terraform.yml
