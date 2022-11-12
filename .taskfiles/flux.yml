@@ -16,3 +16,9 @@ tasks:
       - cmd: kubectl --kubeconfig={{.PROJECT_DIR}}/provision/kubeconfig create namespace flux-system
         ignore_error: true
       - kubectl --kubeconfig={{.PROJECT_DIR}}/provision/kubeconfig -n flux-system create secret generic sops-age --from-file=age.agekey=${SOPS_AGE_KEY_FILE}
+  sync:
+    desc: Sync flux-system with the Git Repository
+    cmds:
+      - flux reconcile source git flux-system
+      - flux reconcile kustomization apps
+
