@@ -4,7 +4,7 @@ metadata:
   name: server
   namespace: server
   annotations:
-    external-dns.alpha.kubernetes.io/endpoints-type: HostIP
+    external-dns.alpha.kubernetes.io/endpoints-type: NodeExternalIP
     external-dns.alpha.kubernetes.io/hostname: server.hef.wtf
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
 spec:
