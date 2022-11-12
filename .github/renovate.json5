@@ -11,4 +11,12 @@
   "kubernetes": {
     "fileMatch": ["cluster/.+\\.ya?ml$"]
   },
+  "packageRules": [
+    {
+        "description": "Auto merge container digests",
+        "matchDatasources": ["docker"],
+        "matchPackagePattern": ["ghcr.io/hef"],
+        "automerge": true,
+    }
+  ]
 }
