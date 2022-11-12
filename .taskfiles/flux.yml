@@ -1,0 +1,12 @@
+---
+version: "3"
+
+tasks:
+  bootstrap:
+    desc: Load flux into cluster
+    cmds:
+      - cmd: kubectl --kubeconfig={{.PROJECT_DIR}}/provision/kubeconfig apply --kustomize={{.PROJECT_DIR}}/cluster/base/flux-system
+  upgrade:
+    desc: update flux files
+    cmds:
+      - cmd: flux install --components-extra image-reflector-controller,image-automation-controller --export > {{.PROJECT_DIR}}/cluster/base/flux-system/gotk-components.yaml
