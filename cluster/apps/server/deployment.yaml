@@ -8,6 +8,8 @@ spec:
   selector:
     matchLabels:
       app: server
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
@@ -16,7 +18,7 @@ spec:
       hostNetwork: true
       containers:
         - name: server
-          image: ghcr.io/hef/tauri-app/server:1.21.0 # {"$imagepolicy": "flux-system:server"}
+          image: ghcr.io/hef/tauri-app/server:1.21.0
           env:
             - name: RUST_BACKTRACE
               value: "full"
@@ -29,3 +31,10 @@ spec:
             - containerPort: 80
               hostPort: 80
               name: external
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 25m
+            limits:
+              memory: 250Mi
+              cpu: 100m
