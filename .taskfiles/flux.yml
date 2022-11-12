@@ -10,3 +10,9 @@ tasks:
     desc: update flux files
     cmds:
       - cmd: flux install --export > {{.PROJECT_DIR}}/cluster/base/flux-system/gotk-components.yaml
+  secret:
+    desc: inject secret
+    cmds:
+      - cmd: kubectl --kubeconfig={{.PROJECT_DIR}}/provision/kubeconfig create namespace flux-system
+        ignore_error: true
+      - kubectl --kubeconfig={{.PROJECT_DIR}}/provision/kubeconfig -n flux-system create secret generic sops-age --from-file=age.agekey=${SOPS_AGE_KEY_FILE}
