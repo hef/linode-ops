@@ -17,6 +17,8 @@
         "matchDatasources": ["docker"],
         "matchPackagePatterns": ["^ghcr.io/hef/"],
         "automerge": true,
+        // todo: add tests, then turn ignore tests off
+        "ignoreTests": true
     }
   ]
 }
