@@ -15,7 +15,7 @@
     {
         "description": "Auto merge container digests",
         "matchDatasources": ["docker"],
-        "matchPackagePatterns": ["^ghcr.io/hef"],
+        "matchPackagePatterns": ["^ghcr.io/hef/"],
         "automerge": true,
     }
   ]
