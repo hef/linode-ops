@@ -18,9 +18,9 @@ spec:
     installCRDs: true
     resources:
       limits:
-      cpu: 1000m
-      memory: 1Gi
-    requests:
-      cpu: 25m
-      memory: 64Mi
+        cpu: 1000m
+        memory: 1Gi
+      requests:
+        cpu: 25m
+        memory: 32Mi
 
