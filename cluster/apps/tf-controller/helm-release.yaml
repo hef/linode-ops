@@ -9,9 +9,11 @@ spec:
   chart:
     spec:
       chart: tf-controller
-      version: 0.12.0
+      version: 0.9.7
       sourceRef:
         kind: HelmRepository
         name: tf-controller-charts
         namespace: flux-system
+  values:
+    installCRDs: false
 
