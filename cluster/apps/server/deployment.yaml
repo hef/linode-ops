@@ -18,7 +18,7 @@ spec:
       hostNetwork: true
       containers:
         - name: server
-          image: ghcr.io/hef/tauri-app/server:1.21.31
+          image: ghcr.io/hef/tauri-app/server:1.21.32
           env:
             - name: RUST_BACKTRACE
               value: "full"
